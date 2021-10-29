@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-int sum_digit(int a) {
+long long int sum_digits(long long int a) {
 	int c,sc=0;
 	while (a != 0) {
 		c = a % 10;
@@ -9,11 +9,15 @@ int sum_digit(int a) {
 	}
 	return sc;
 }
-int main(){
-	int a;
-	cin >> a;
-	if (sum_digit(a % 1000) == sum_digit(a) -sum_digit(a % 1000)) {
-		cout << "YES";
+int main() {
+	long long int a, b, c;
+	cin >> a >> b;
+	for (long long int i = a; i <= b; i++)
+	{
+		c = sum_digits(i);
+		if (c == sum_digits(2 * i) && c == sum_digits(3 * i) && c == sum_digits(4 * i) && c == sum_digits(5 * i) && c == sum_digits(6 * i) && c == sum_digits(7 * i) && c == sum_digits(8 * i) && c == sum_digits(9 * i)) {
+			cout << i << endl;
+		}
+		c = 0;
 	}
-	else cout << "NO";
 }
